@@ -14,7 +14,7 @@ def conexion():
     );
     """)
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS principal(
+    CREATE TABLE IF NOT EXISTS contraseñas(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         pagina varchar(255),
         password varchar (255)
@@ -22,7 +22,8 @@ def conexion():
     """)
     ## Guardo cambios
     conexion.commit()
-    return cursor
+    retorno = (conexion, cursor)
+    return retorno
     # Cerrar conexión
     conexion.close()
 
