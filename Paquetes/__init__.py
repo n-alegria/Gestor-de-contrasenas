@@ -1,3 +1,3 @@
 from .Conexion import conexionBD
 
-from .MenuPrincipal import bienvenida, loginPrincipal
+from .MenuPrincipal import bienvenida, loginPrincipal, registroPrincipal

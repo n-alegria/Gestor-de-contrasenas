@@ -1,7 +1,6 @@
 import os, time
 from Paquetes.MenuContraseñas.bienvenida import bienvenida
 
-
 def loginContraseñas(conexion, cursor, verificado):
     opcion = bienvenida(verificado)
     if opcion == 1:
