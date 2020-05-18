@@ -1,8 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import sqlite3
 
-def conexion():
+def conexionBD():
     # Conexión
-    conexion = sqlite3.connect('baseDeDatos.db')
+    
+    conexion = sqlite3.connect('./baseDeDatos.db')
     # Crear cursor -> permite ejecutar consultas
     cursor = conexion.cursor()
     # Crear tabla
@@ -15,14 +18,13 @@ def conexion():
     """)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS contraseñas(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        pagina varchar(255),
-        password varchar (255)
+        id              INTEGER PRIMARY KEY AUTOINCREMENT,
+        pagina          varchar(255),
+        password        varchar (255),
+        id_usuario      integer
     );
     """)
     ## Guardo cambios
     conexion.commit()
     retorno = (conexion, cursor)
     return retorno
-    # Cerrar conexión
-    conexion.close()
