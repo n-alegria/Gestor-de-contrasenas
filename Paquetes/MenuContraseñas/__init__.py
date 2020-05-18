@@ -1,1 +1,1 @@
-from .loginContraseñas import loginContraseñas
+from .menuContraseñas import menuContraseñas

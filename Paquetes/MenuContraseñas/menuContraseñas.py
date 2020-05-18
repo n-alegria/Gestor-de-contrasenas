@@ -1,7 +1,7 @@
 import os, time
-from Paquetes.MenuContraseñas.bienvenida import bienvenida
+from ..MenuContraseñas.bienvenida import bienvenida
 
-def loginContraseñas(conexion, cursor, verificado):
+def menuContraseñas(conexion, cursor, verificado):
     opcion = bienvenida(verificado)
     if opcion == 1:
         os.system("cls")
@@ -15,7 +15,7 @@ def loginContraseñas(conexion, cursor, verificado):
             if cursor.rowcount > 0:
                 print("\nIngreso exitoso.\n")
                 os.system("pause")
-            loginContraseñas(conexion, cursor, verificado)
+            menuContraseñas(conexion, cursor, verificado)
         else:
             print("\nError, las contraseñas no coinciden.")
     elif opcion == 2:
@@ -36,7 +36,7 @@ def loginContraseñas(conexion, cursor, verificado):
                 print("\nSe cancelo la baja de la pagina")
         else:
             print(f"\nNo existe la pagina '{pagina}'")
-        loginContraseñas(conexion, cursor, verificado)
+        menuContraseñas(conexion, cursor, verificado)
     elif opcion == 3:
         os.system("cls")
         print(" --> Modificar contraseña <--\n")
@@ -65,7 +65,7 @@ def loginContraseñas(conexion, cursor, verificado):
                     print("\nSe cancelo la modificacion de contraseña")
         else:
             print(f"\nNo existe la pagina '{pagina}'")
-        loginContraseñas(conexion, cursor, verificado)
+        menuContraseñas(conexion, cursor, verificado)
     elif opcion == 4:
         os.system("cls")
         print(" --> Listado de contraseñas <--\n")
@@ -83,7 +83,7 @@ def loginContraseñas(conexion, cursor, verificado):
         print(Tabla)
         print()
         os.system("pause")
-        loginContraseñas(conexion, cursor, verificado)
+        menuContraseñas(conexion, cursor, verificado)
     elif opcion == 5:
         print(f"\nHasta luego {verificado[1]}")
         del verificado

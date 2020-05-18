@@ -1,5 +1,5 @@
 import os, time
-from ..MenuContraseñas import loginContraseñas
+from ..MenuContraseñas import menuContraseñas
 
 def loginPrincipal(conexion, cursor):
     os.system("cls")
@@ -11,6 +11,6 @@ def loginPrincipal(conexion, cursor):
     if(verificado[1] == usuario and verificado[2] == contraseña):
         print("\n --> Ingreso correcto")
         time.sleep(1)
-        loginContraseñas(conexion, cursor, verificado)
+        menuContraseñas(conexion, cursor, verificado)
     else:
         print("\n --> Datos ingresados incorrectos.")
