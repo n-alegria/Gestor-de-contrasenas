@@ -18,9 +18,9 @@ def opcionValidacion():
     try:
         opcion = int(input("Ingrese su opcion: "))
         while (opcion <= 0 or opcion >= 6):
-            print("\nIngreso una opcion incorrecta. Reintente")
+            print("\n --> Ingreso una opcion incorrecta. Reintente\n")
             opcion = int(input("Ingrese su opcion: "))
         return opcion
-    except:
-        print("\n<-- Su ingreso no es valido, reintente. -->\n")
-        opcionValidacion()
+    except ValueError:
+        print("\n --> Solo se permite el ingreso de números. Reintente.\n")
+        return opcionValidacion()
