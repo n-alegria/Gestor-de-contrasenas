@@ -1,2 +1,2 @@
-# Gestor-de-contrase-as
+# Gestor de contraseñas
 Aplicacion de consola ABM para contraseñas.
